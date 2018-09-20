@@ -4,6 +4,7 @@ import { BrowserRouter, Link, Route } from 'react-router-dom'
 import Topics from './components/Topics';
 import * as api from './api.js'
 import Display from './components/Display';
+import mainLogo from './images/northcoders_logo.png'
 
 class App extends Component {
   state = {
@@ -15,8 +16,12 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <button><img src="/images/northcoders_logo.png" width="200" height="50" alt="NC Logo.png" /></button>
-          <h1>NC News</h1>
+          <h1 className="head"><img className="logo" src={mainLogo} alt="Northcoders Logo." />
+            <div className="news">
+              <div className="n">N</div>
+              <div className="ews">EWS</div>
+            </div>
+          </h1>
           <div className="article-display">
             <nav>
               <Link to="/">Topics</Link>

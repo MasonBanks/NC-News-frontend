@@ -1,4 +1,22 @@
+.text{
+  margin-top: 2%;
+  margin-left: 10%;
+}
 .submitted-text{
   font-size: 10px;
-  
+}
+li{
+  display: inline;
+}
+.card{
+  border: 1px solid gray;
+  height: 100px;
+  margin-bottom: 2px;
+  margin-right: 25%;
+  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.1s;
+}
+.card:hover{
+  transform: scale(1.01);
+  cursor: pointer;
 }

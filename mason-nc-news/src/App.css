@@ -1,3 +1,55 @@
 .App {
   font-family: Arial, Helvetica, sans-serif
 }
+button{
+  border: none;
+  color: black;
+}
+.logo{
+  margin-top: 10px;
+  height: 75%;
+  width: 425px;
+  background-color: #0B0C0C;
+  transition: 0.2s
+}
+.logo:hover{
+  transform:scale(1.005)
+}
+.head {
+  vertical-align: bottom;
+  margin-top: -10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  background-color: #0B0C0C;;
+  height: 50%;
+}
+.news {
+  font-family: 'Gotham Bold Regular';
+  margin-left: 8px;
+  font-stretch: expanded;
+  color: white;
+  mix-blend-mode: difference;
+  font-size: 50px;
+}
+.n{
+  color: #cc0033;
+  float: left;
+}
+@font-face{
+  font-family: 'SFO';
+  src: url('./fonts/SFO.ttf')
+}
+@font-face{
+  font-family: 'Adelaide';
+  src: url('./fonts/Adelaide-Regular.otf')
+}
+@font-face{
+  font-family: 'CornDemo';
+  src: url('./fonts/CornDemo-Regular.ttf')
+}
+@font-face{
+  font-family: 'Gotham Bold Regular';
+  src: url('./fonts/GothamBoldRegular.ttf')
+}
