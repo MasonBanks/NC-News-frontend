@@ -22,3 +22,5 @@ yarn-error.log*
 
 .react-project-checklist.md
 .node_modules
+
+node_modules/
