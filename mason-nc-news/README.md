@@ -1,3 +1,10 @@
+NC News
+
+Link to the live site being hosted on Netlify:
+
+https://5ba8a753792f893ad834f6a2.tender-jepsen-d991bb.netlify.com/
+
+
 Pathways:
 
 ```
