@@ -1,41 +1,54 @@
 .App {
-  font-family: Arial, Helvetica, sans-serif
+  font-family: 'SFO2';
 }
 button{
   border: none;
   color: black;
 }
-.logo{
-  margin-top: 10px;
-  height: 75%;
-  width: 425px;
-  background-color: #0B0C0C;
-  transition: 0.2s
+nav{
+  text-align: center;
 }
-.logo:hover{
-  transform:scale(1.005)
+.news:hover{
+  transform: scale(1.01);
+  transform-origin: top left;
 }
 .head {
   vertical-align: bottom;
   margin-top: -10px;
   margin-left: -10px;
   margin-right: -10px;
+  padding-top: 15px;
   padding-bottom: 15px;
   margin-bottom: 20px;
-  background-color: #0B0C0C;;
-  height: 50%;
+  background-color: #0B0C0C;
+  height: 100%;
 }
 .news {
   font-family: 'Gotham Bold Regular';
   margin-left: 8px;
-  font-stretch: expanded;
+  font-stretch: narrower;
   color: white;
   mix-blend-mode: difference;
   font-size: 50px;
+  transition: 200ms;
 }
 .n{
   color: #cc0033;
   float: left;
+}
+.symbol{
+  font-family: Arial, Helvetica, sans-serif;
+  color:#cc0033;
+  font-size: 55px;
+  margin-bottom: -28px;
+  margin-left: 3px;
+}
+footer{
+  padding-top: 10%;
+  padding-bottom: 1%;
+  color: gray;
+  text-align: center;
+  font-size: 10px;
 }
 @font-face{
   font-family: 'SFO';
@@ -52,4 +65,8 @@ button{
 @font-face{
   font-family: 'Gotham Bold Regular';
   src: url('./fonts/GothamBoldRegular.ttf')
+}
+@font-face{
+  font-family: 'SFO2';
+  src: url('./fonts/SanFranciscoDisplay-Regular.otf')
 }

@@ -1,3 +1,4 @@
+// import axios from 'axios'
 const DB_URL = 'https://mason-nc-news.herokuapp.com/api'
 
 export const getArticles = () => {
@@ -12,3 +13,8 @@ export const getUsers = () => {
     .then(body => body.users)
 }
 
+// export const getArticlesFromTopic = () => {
+//   return fetch(`${DB_URL}/topics`)
+//     .then(res => res.json())
+//     .then(body => console.log(body))
+// }
