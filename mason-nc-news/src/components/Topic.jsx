@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import moment from 'moment'
+import PostAdder from './PostAdder';
+import * as api from '../api';
 
 class Topic extends Component {
   state = {
@@ -8,23 +11,24 @@ class Topic extends Component {
   render() {
     return (
       <div>
-        <ul className="article-container"> Todays News:<br /><br />
+        <PostAdder />
+        <ul className="article-container">
           {this.state.articles.sort((a, b) => {
             const c = new Date(a.created_at);
             const d = new Date(b.created_at)
             return d - c
           }).map(article => {
             return <div className="card" key={`${article._id}_card`} >
-              <a href={`/nc/${article.belongs_to}/${article._id}`} style={{ textDecoration: 'none', color: 'black' }} >
-                <li className="article-card" key={article._id} >
-                  <div className="text">
+              <li className="article-card" key={article._id} >
+                <div className="text">
+                  <Link to={`/nc/${article.belongs_to}/${article._id}`}>
                     <p className="article-title">
                       {article.title}
                     </p>
-                    <p className='submitted-text'>submitted {moment(article.created_at).startOf("second").fromNow()} to {article.belongs_to}</p>
-                  </div>
-                </li>
-              </a>
+                  </Link>
+                  <p className='submitted-text'>submitted {moment(article.created_at).startOf("second").fromNow()} to {article.belongs_to} by {article.created_by.username}</p>
+                </div>
+              </li>
             </div>
           })}
         </ul>
@@ -32,20 +36,21 @@ class Topic extends Component {
     );
   }
   componentDidMount() {
-    this.fetchArticlesFromTopic(this.props.match.params.topic)
+    api.fetchArticlesFromTopic(this.props.match.params.topic)
+      .then(articles => {
+        this.setState({
+          articles
+        })
+      })
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.articles !== this.state.articles)
-      this.fetchArticlesFromTopic(this.props.match.params.topic)
-  }
-  fetchArticlesFromTopic = (topic) => {
-    fetch(`https://mason-nc-news.herokuapp.com/api/topics/${topic}/articles`)
-      .then(res => res.json())
-      .then(body => {
-        this.setState({
-          articles: body.articles
+      api.fetchArticlesFromTopic(this.props.match.params.topic)
+        .then(articles => {
+          this.setState({
+            articles
+          })
         })
-      })
   }
 }
 
