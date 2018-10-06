@@ -14,14 +14,13 @@ class Article extends Component {
   }
   render() {
     const { err } = this.state;
-    if (err) return <Redirect to="/nc/404" />
-    // <Redirect to={{
-    //   pathname="/error",
-    //   state: {
-    //     code: err.status,
-    //     message: err.msg
-    //   }
-    // }} />
+    if (err) return <Redirect to={{
+      pathname: "/nc/error",
+      state: {
+        code: err.status,
+        message: err.msg
+      }
+    }} />
     if (!this.state.title) return <p>loading...</p>
     return (
       <div className="article">

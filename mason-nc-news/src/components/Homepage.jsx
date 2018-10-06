@@ -26,7 +26,7 @@ class Homepage extends Component {
           <Route exact path='/nc/:topic/:article_id' render={(props) => <Article {...props} articles={this.state.articles} />} />
           <Route exact path='/nc/:topic' render={(props) => <Topic {...props} />} />
           <Route exact path='/nc/submit' render={() => <Submit />} />
-          <Route exact path='/nc/404' render={() => <ErrorRedirect />} />
+          <Route exact path='/nc/error' render={() => <ErrorRedirect />} />
           <footer>
             <p>© 2018 - Site designed & developed by Mason Banks</p>
             This is a student project demo created whilst studying the Full Stack Developer Course at
