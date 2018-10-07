@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
 }
-/*
+
 nav{
   text-align: center;
 }
@@ -64,7 +64,7 @@ footer{
   font-family: 'Gotham Bold Regular';
   src: url('./fonts/GothamBoldRegular.ttf')
 }
-*/
+
 @font-face{
   font-family: 'SFO2';
   src: url('./fonts/SanFranciscoDisplay-Regular.otf')
