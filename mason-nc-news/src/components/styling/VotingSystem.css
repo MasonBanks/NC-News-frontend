@@ -1,0 +1,26 @@
+.vote{
+  height: 10px;
+}
+
+.vote-inactive{
+  height: 10px;
+  opacity: 0.5;
+}
+
+button{
+  border: none;
+  padding: 1px;
+  margin: 2px;
+}
+
+.num-display{
+  font-family: SFO2;
+  margin: 0px;
+  padding: 2px;
+}
+
+.voting-display{
+  display: block;
+  width: 5%;
+  text-align: center;
+}

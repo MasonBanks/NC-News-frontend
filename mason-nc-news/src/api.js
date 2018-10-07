@@ -52,10 +52,14 @@ export const addCommentToArticle = (data, articleId) => {
 
 export const updateVote = (id, type, direction) => {
   return axios.put(`${DB_URL}/${type}/${id}?votes=${direction}`)
-    .then(({ data }) => console.log(data))
+    .then(({ data }) => {
+      return data
+    })
 }
 
 export const deleteComment = (id) => {
   return axios.delete(`${DB_URL}/comments/${id}`)
-    .then(res => console.log(res))
+    .then(res => {
+      return res
+    })
 }

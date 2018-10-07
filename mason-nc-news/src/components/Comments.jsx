@@ -30,6 +30,11 @@ class Comments extends Component {
                 <div>{comment.created_by.username}</div>
                 <div>{`${moment(comment.created_at).startOf("second").fromNow()}`}</div>
                 <VotingSystem id={comment._id} type="comments" votes={comment.votes} />
+                <div className="remove-comment">
+                  <button onClick={this.deleteComment} value={comment._id}>
+                    delete
+        </button>
+                </div >
                 <div>{`"${comment.body}"`}</div>
               </li>
             })}
@@ -44,9 +49,9 @@ class Comments extends Component {
         article_id: this.props.article_id
       }))
   }
-  componenetDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps, prevState) {
     if (prevState.comments !== this.state.comments)
-      api.fetchCommentsForArticle(this.state.comments)
+      api.fetchCommentsForArticle(this.props.article_id)
   }
   handleChange = (e) => {
     const { name, value } = e.target
@@ -69,9 +74,19 @@ class Comments extends Component {
         })
       })
   }
-  // deleteComment = () => {
-  //   api.deleteComment(this.)
-  // }
+  deleteComment = (e) => {
+    api.deleteComment(e.target.value)
+      .then(res => {
+        if (res.status === 202) {
+          api.fetchCommentsForArticle(this.props.article_id)
+            .then(res => {
+              this.setState({
+                comments: [...res]
+              })
+            })
+        }
+      })
+  }
 }
 
 export default Comments;

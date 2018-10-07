@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import moment from 'moment'
 import PostAdder from './PostAdder';
 import * as api from '../api';
@@ -7,8 +7,17 @@ import * as api from '../api';
 class Topic extends Component {
   state = {
     articles: [],
+    err: null
   }
   render() {
+    const { err } = this.state;
+    if (err) return <Redirect to={{
+      pathname: "/nc/error",
+      state: {
+        code: err.status,
+        message: err.msg
+      }
+    }} />
     return (
       <div>
         <PostAdder />
@@ -40,6 +49,11 @@ class Topic extends Component {
       .then(articles => {
         this.setState({
           articles
+        })
+      })
+      .catch(err => {
+        this.setState({
+          err
         })
       })
   }
