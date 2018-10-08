@@ -7,6 +7,7 @@ npm install
 ```
 
 api is hosted on: https://mason-nc-news.herokuapp.com/api
+site can be viewed on: mason-nc-news.netlify.com
 
 
 Routes Available:
