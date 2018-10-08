@@ -1,5 +1,12 @@
 Northcoders News:
 
+Install necessary packages
+
+```
+npm install
+```
+
+api is hosted on: https://mason-nc-news.herokuapp.com/api
 
 
 Routes Available:
