@@ -28,14 +28,14 @@ class Comments extends Component {
             }).map((comment, id) => {
               return <li key={id} className="comment-card">
                 <div>{comment.created_by.username}</div>
-                <div>{`${moment(comment.created_at).startOf("second").fromNow()}`}</div>
+                <p>
+                  <div>{`${moment(comment.created_at).startOf("second").fromNow()}`}</div>
+                </p>
+                <div>{`"${comment.body}"`}</div>
                 <VotingSystem id={comment._id} type="comments" votes={comment.votes} />
                 <div className="remove-comment">
-                  <button onClick={this.deleteComment} value={comment._id}>
-                    delete
-        </button>
+                  <button onClick={this.deleteComment} value={comment._id}>delete</button>
                 </div >
-                <div>{`"${comment.body}"`}</div>
               </li>
             })}
         </ul>

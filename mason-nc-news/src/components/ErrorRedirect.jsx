@@ -4,8 +4,8 @@ import './styling/ErrorRedirect.css';
 
 export default function ErrorRedirect({ props }) {
   return (
-    <div>
-      <p>{`${props}`}</p>
+    <div className="errorHandler">
+      <p>Sorry, that page isn't here!</p>
       <img className='kitten' src={kitten} alt="404 kitten" />
     </div>
   );

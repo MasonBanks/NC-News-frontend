@@ -1,22 +1,25 @@
-NC News
-
-Link to the live site being hosted on Netlify:
-
-https://5ba8a753792f893ad834f6a2.tender-jepsen-d991bb.netlify.com/
+Northcoders News:
 
 
-Pathways:
 
+Routes Available:
 ```
-"/" - Homepage
-
-"/nc/coding" - Page containing all articles on coding
-
-"/nc/football" - Page containing all articles on football
-
-"/nc/cooking" - Page containing all articles on cooking
-
-"/nc/:topic/:article_id" - Page containing the body of the article and the comments linked to that article
-
-Logo icon will take you back to homepage
+/
 ```
+Takes you to the homepage displaying all articles sorted by the most recent. 
+The Northcoders News logo in the top left will be your link back to this homepage.
+Create Post will take you to a page to add an article to the availble topics
+The NCategories will take you to the pages that display all the articles belonging to that topic, ex:
+```
+/nc/coding
+/nc/football
+/nc/cooking
+```
+
+Each article has buttons where you can either upvote or downvote the post.
+Clicking on the article's title will take you to the page that holds the text belonging to that article as well as user's comments to that article. ex:
+```
+/nc/:topic/:article_id
+```
+You can also post your own comment to the article. 
+You can delete comments by clicking 'delete' within the comment

@@ -1,11 +1,12 @@
 .text{
   margin-left: 10%;
+  padding-left: 10px;
 }
 .submitted-text{
   font-size: 10px;
 }
 li{
-  display: flex;
+  display: inherit;
 }
 .card{
   border: 1px solid gray;
@@ -48,4 +49,11 @@ li{
 }
 .article-body{
   margin-bottom: 50px;
+}
+
+.article-avatar{
+  padding: 5px;
+  width: 10px;
+  height: 100%;
+  float: left;
 }

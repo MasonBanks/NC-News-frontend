@@ -3,6 +3,7 @@ import moment from 'moment';
 import Comments from './Comments';
 import * as api from '../api';
 import { Redirect } from 'react-router-dom';
+import VotingSystem from './VotingSystem';
 
 class Article extends Component {
   state = {
