@@ -38,16 +38,10 @@ export const fetchArticlesFromTopic = (topic) => {
 
 export const postArticleToTopic = (data, belongs_to) => {
   return axios.post(`${DB_URL}/topics/${belongs_to}/articles`, data)
-    .then(res => {
-      return res
-    })
 }
 
 export const addCommentToArticle = (data, articleId) => {
   return axios.post(`${DB_URL}/articles/${articleId}/comments`, data)
-    .then(res => {
-      return res
-    })
 }
 
 export const updateVote = (id, type, direction) => {
@@ -59,7 +53,4 @@ export const updateVote = (id, type, direction) => {
 
 export const deleteComment = (id) => {
   return axios.delete(`${DB_URL}/comments/${id}`)
-    .then(res => {
-      return res
-    })
 }

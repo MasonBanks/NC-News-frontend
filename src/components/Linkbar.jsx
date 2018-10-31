@@ -5,11 +5,14 @@ const Linkbar = () => {
   return (
     <div>
       <nav className="links">
-        <span className="n">NC</span>ategories:{" "}
-        <Link className="text-link" to="/nc/coding" >coding</Link>{" • "}
-        <Link className="text-link" to="/nc/football" >football</Link>{" • "}
-        <Link className="text-link" to="/nc/cooking" >cooking</Link>
+        <Link className="text-link" to="/nc/coding" id="links">coding</Link>{" • "}
+        <Link className="text-link" to="/nc/football" id="links">football</Link>{" • "}
+        <Link className="text-link" to="/nc/cooking" id="links">cooking</Link>
+        <div className="ncategory">
+          <span className="n">NC</span>ategories:{" "}
+        </div>
       </nav>
+
     </div>
   );
 };

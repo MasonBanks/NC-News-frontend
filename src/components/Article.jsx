@@ -3,7 +3,7 @@ import moment from 'moment';
 import Comments from './Comments';
 import * as api from '../api';
 import { Redirect } from 'react-router-dom';
-import VotingSystem from './VotingSystem';
+import Loading from './Loading';
 
 class Article extends Component {
   state = {
@@ -14,18 +14,20 @@ class Article extends Component {
     err: null
   }
   render() {
+    if (!this.state.title) return <Loading />
     const { err } = this.state;
-    if (err) return <Redirect to={{
-      pathname: "/nc/error",
-      state: {
-        code: err.status,
-        message: err.msg
-      }
-    }} />
-    if (!this.state.title) return <p>loading...</p>
+    if (err) {
+      return <Redirect to={{
+        pathname: "/error",
+        state: {
+          code: err.response.status,
+          message: err.response.data.msg
+        }
+      }} />
+    }
     return (
-      <div className="article">
-        <div className="article-body">
+      <div className="articlePage">
+        <div className="article">
           <h1>{this.state.title}</h1>
           <p>{this.state.text}</p>
           <p>posted {moment(this.state.created_at).startOf("second").fromNow()} by {this.state.created_by.username}</p>

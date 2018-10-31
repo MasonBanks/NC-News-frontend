@@ -1,35 +1,42 @@
-.App {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: SFO2;
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
 }
 
-nav{
-  text-align: center;
+body{
+  font-family: SFO2;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  background-color: #75cae494;
 }
-.news:hover{
-  opacity: 0.75;
+
+@font-face{
+  font-family: 'Gotham Bold Regular';
+  src: url('./fonts/GothamBoldRegular.ttf')
 }
-.head {
-  vertical-align: bottom;
-  margin-top: -10px;
-  margin-left: -10px;
-  margin-right: -10px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin-bottom: 20px;
-  background-color: #0B0C0C;
-  height: 100%;
+@font-face{
+  font-family: 'SFO2';
+  src: url('./fonts/SanFranciscoDisplay-Regular.otf')
+}  
+.header{
+  padding: 1%;
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  justify-content: center;
 }
 .news {
   font-family: 'Gotham Bold Regular';
   margin-left: 8px;
   font-stretch: narrower;
   color: white;
-  mix-blend-mode: difference;
   font-size: 50px;
   transition: 200ms;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 .n{
   color: #cc0033;
@@ -41,32 +48,221 @@ nav{
   font-size: 50px;
   margin-bottom: -28px;
   margin-left: 7px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 footer{
-  padding-top: 10%;
+  padding-top: 2%;
   padding-bottom: 1%;
   color: gray;
   text-align: center;
   font-size: 10px;
 }
-@font-face{
-  font-family: 'SFO';
-  src: url('./fonts/SFO.ttf')
+.links{
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: space-around;
+  font-family: SFO2;
+  color: white;
 }
-@font-face{
-  font-family: 'Adelaide';
-  src: url('./fonts/Adelaide-Regular.otf')
+.news:hover{
+  opacity: 0.75;
 }
-@font-face{
-  font-family: 'CornDemo';
-  src: url('./fonts/CornDemo-Regular.ttf')
+.text-link{
+  text-decoration: none;
+  font-size: 20px; 
+  color: #cc0033; 
+  transition: 200ms;
+  letter-spacing: 3px;
 }
-@font-face{
-  font-family: 'Gotham Bold Regular';
-  src: url('./fonts/GothamBoldRegular.ttf')
+.text-link:hover, #post:hover {
+  color:#d42651;
+  transform: scale(1.01)
+}
+.text-link:active{
+  opacity: .5;
+}
+#post{
+  display: flex;
+  padding: 1%;
+  padding-bottom: 0;
+  font-size: 15px;
+  flex-flow: row-reverse;
+  align-items: center;
+}
+.ncategory{
+  text-decoration: none;
+  font-size: 20px; 
+  color: white; 
+  transition: 200ms;
+  letter-spacing: 3px;
+}
+.content{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+.display{ 
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+}
+#newsToday{
+  display: flex;
+  flex-flow: row;
+  font-family: Gotham Bold Regular;
+  color: white;
+  font-size: 25px;
+  padding-top: 1%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+.card{
+  border: 3px outset #bd38388f;
+  background-color:#ffffffa6;
+  border-radius: 25px;
+  list-style: none;
+  padding: 1%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1%;
+  transition: 200ms;
+}
+.vote, .vote-inactive{
+  height: 10px;
+}
+.vote-inactive{
+  opacity: .5;
 }
 
-@font-face{
-  font-family: 'SFO2';
-  src: url('./fonts/SanFranciscoDisplay-Regular.otf')
-} 
+#submissionBy{
+  font-size: 8px;
+}
+.article-avatar{
+  order:0;
+  padding: 2%;
+}
+li {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  padding: 1%;
+  color: black;
+}
+.card:hover{
+  transform: scale(1.01);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+}
+.comment-card{
+  align-items: center;
+  justify-content: space-between;
+}
+#commentList{
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  display: block;
+  width: 75%;
+}
+.articlePage{
+/* display: flex;
+flex-flow: column;
+justify-content: center; */
+width: 90%;
+padding: 1%;
+}
+.article{
+  flex-direction: column;
+  align-self: center;
+}
+.articleText{
+  margin-left: 5%;
+  margin-right: 2%;
+}
+#delete, .commentButton{
+  border: none;
+  background-color: transparent;
+  transition: 200ms;
+  font-size: 20px;
+  height: auto;
+  width: auto;
+}
+#delete:hover, .commentButton:hover{
+  color:#d42651;
+  transform: scale(1.5);
+}
+.articleSection{
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center
+}
+.commentButton{
+  font-size: 40px;
+}
+form{
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+.commentToAdd{
+  margin: 3%;
+  padding: 1%;
+  height: 75px;
+  width: 1000px;
+  resize: vertical;
+  border-radius: 25px;
+  min-height: 50px;
+}
+.commentCardAll, .commentCardOdd{
+  margin: 2%;
+  padding: 1%;
+  background-color: rgba(75, 132, 158, 0.301);
+  text-align: left;
+  border-radius: 25px;
+}
+.commentCardOdd{
+ background-color: rgba(158, 75, 75, 0.301);
+}
+.loadingScreen{
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: .5;
+}
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #cc0033;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1000ms linear infinite;
+}
+.loadText{
+  margin: -80px;
+  font-size: 100px;
+  font-family: Impact, Haettenschweiler sans-serif;
+  color:#cc0033;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+button:focus{
+  outline: none;
+}
+button:active{
+  opacity: .5;
+  transform: scale(.5)
+}
+button{
+  transition: 200ms
+}

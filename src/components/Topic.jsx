@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom'
-import moment from 'moment'
-import PostAdder from './PostAdder';
+import { Redirect } from 'react-router-dom';
 import * as api from '../api';
+import Display from './Display';
+import Loading from './Loading';
 
 class Topic extends Component {
   state = {
@@ -10,37 +10,20 @@ class Topic extends Component {
     err: null
   }
   render() {
+    if (this.state.articles.length < 1) return <Loading />
     const { err } = this.state;
-    if (err) return <Redirect to={{
-      pathname: "/nc/error",
-      state: {
-        code: err.status,
-        message: err.msg
-      }
-    }} />
+    if (err) {
+      return <Redirect to={{
+        pathname: "/error",
+        state: {
+          code: err.response.status,
+          message: err.response.data.msg
+        }
+      }} />
+    }
     return (
       <div>
-        <PostAdder />
-        <ul className="article-container">
-          {this.state.articles.sort((a, b) => {
-            const c = new Date(a.created_at);
-            const d = new Date(b.created_at)
-            return d - c
-          }).map(article => {
-            return <div className="card" key={`${article._id}_card`} >
-              <li className="article-card" key={article._id} >
-                <div className="text">
-                  <Link to={`/nc/${article.belongs_to}/${article._id}`}>
-                    <p className="article-title">
-                      {article.title}
-                    </p>
-                  </Link>
-                  <p className='submitted-text'>submitted {moment(article.created_at).startOf("second").fromNow()} to {article.belongs_to} by {article.created_by.username}</p>
-                </div>
-              </li>
-            </div>
-          })}
-        </ul>
+        <Display articles={this.state.articles} />
       </div>
     );
   }

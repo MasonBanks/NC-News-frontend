@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './styling/Submit.css';
 import * as api from '../api';
 
 
@@ -12,7 +11,7 @@ class Submit extends Component {
     postAdded: false
   }
   render() {
-    if (this.state.postAdded) return <p>{`thanks for adding to ${this.state.belongs_to}, :)`}</p>
+    if (this.state.postAdded) return <p>{`thanks for adding to ${this.state.belongs_to}! :)`}</p>
     return (
       <div>
         <form className="submission-form" autoComplete="off" onSubmit={this.handleSubmit}>
