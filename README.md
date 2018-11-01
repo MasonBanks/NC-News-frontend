@@ -80,10 +80,20 @@ Clicking on the article's title will take you to the page that holds the text be
 You can also post your own comment to the article. 
 You can delete comments by clicking 'delete' within the comment
 
+In the top right hand side of the page there is a `Create Post` link which will take you to the submit article page.
+```
+/submit
+```
+
+If an article ID is input incorrectly in the URL, the error will be handled and you will be redirected to an error page.
+```
+/error
+```
+
 ---
 
-## My Final Thoughts
+## Final Thoughts
 
-Developing this project really opened the door and my mind to all the different parts and components that go into making an application. There were times when I did feel that the combination of tasks was overwhelming, but by sticking to the Agile methods, I was able to overcome those obstacles and really break down the individual task at hand. 
+Developing this project really opened the door and my mind to all the different parts and components that go into making an application. There were times when I did feel that the combination of tasks was overwhelming, but by implementing Agile software development practices into my process, I was able to overcome those obstacles and really break down the individual task at hand. 
 
 I think some things that I would perhaps plan to do on future projects would be to consider using a UI framework on the front end to create a more visually dynamic page. This was a first time for me building a page with `HTML` and `CSS` and I am pleased with the results and animations that I was able to make, but I think a personal goal that I would work on would be to develop my skills with grids so that I can create a more uniform design and simplify my code.

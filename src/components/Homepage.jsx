@@ -13,10 +13,22 @@ import Loading from './Loading';
 class Homepage extends Component {
   state = {
     articles: [],
-    topics: []
+    topics: [],
+    err: null
   }
   render() {
     if (!this.state.topics) return <Loading />
+    const { err } = this.state;
+    if (err) {
+      console.log(err)
+      // return <Redirect to={{
+      //   pathname: "/error",
+      //   state: {
+      //     code: err.response.status,
+      //     message: err.response.data.msg
+      //   }
+      // }} />
+    }
     return (
       <BrowserRouter>
         <div className="content">
@@ -44,6 +56,11 @@ class Homepage extends Component {
       .then(articles => this.setState({
         articles
       }))
+      .catch(err => {
+        this.setState({
+          err
+        })
+      })
   }
   // componentDidUpdate(prevProps) {
   //   if (prevProps.articles !== this.props) {
