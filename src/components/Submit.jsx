@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../api';
-
+import { FaEdit } from 'react-icons/fa';
 
 class Submit extends Component {
   state = {
@@ -13,31 +13,32 @@ class Submit extends Component {
   render() {
     if (this.state.postAdded) return <p>{`thanks for adding to ${this.state.belongs_to}! :)`}</p>
     return (
-      <div>
+      <div className="submitPage">
         <form className="submission-form" autoComplete="off" onSubmit={this.handleSubmit}>
           <div>
-            <label >
-              <div>
-                Title:
-            </div>
-              <textarea className="title" name="title" type="text" placeholder="title" value={this.state.title} onChange={this.handleChange} />
-            </label>
+            <h2>
+              Title:
+            </h2>
+            <textarea className="title" name="title" type="text" placeholder="title..." value={this.state.title} onChange={this.handleChange} />
           </div>
           <div>
-            <label >
+            <h2>
               Text:
-              <div>
-                <textarea className="body-text" name="body" type="text" placeholder="text" value={this.state.text} onChange={this.handleChange} />
-              </div>
-            </label>
+            </h2>
+            <div>
+              <textarea className="body-text" name="body" type="text" placeholder="text..." value={this.state.text} onChange={this.handleChange} />
+            </div>
+
+            <select className="dropDown" name="belongs_to" onChange={this.handleChange} id="ncategory">
+              <option>Choose a NCategory</option>
+              <option value="coding">coding</option>
+              <option value="football">football</option>
+              <option value="cooking">cooking</option>
+            </select>
+            <div>
+              <button className="postButton" type='submit' disabled={(this.state.title && this.state.body && this.state.belongs_to) ? false : true}>POST <FaEdit /></button>
+            </div>
           </div>
-          <select className="ncategory" name="belongs_to" onChange={this.handleChange} id="ncategory">
-            <option>Choose a NCategory</option>
-            <option value="coding">coding</option>
-            <option value="football">football</option>
-            <option value="cooking">cooking</option>
-          </select>
-          <button type='submit'>Post</button>
         </form>
       </div >
     );

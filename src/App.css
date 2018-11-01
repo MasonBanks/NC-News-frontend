@@ -107,7 +107,7 @@ footer{
   flex-flow: row;
   justify-content: space-evenly;
 }
-#newsToday{
+#newsToday, h2{
   display: flex;
   flex-flow: row;
   font-family: Gotham Bold Regular;
@@ -167,9 +167,6 @@ li {
   width: 75%;
 }
 .articlePage{
-/* display: flex;
-flex-flow: column;
-justify-content: center; */
 width: 90%;
 padding: 1%;
 }
@@ -261,8 +258,60 @@ button:focus{
 }
 button:active{
   opacity: .5;
-  transform: scale(.5)
+  transform: scale(.7)
 }
 button{
   transition: 200ms
+}
+.submission-form{
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+}
+.submitPage, .title, .body-text{
+  margin-bottom: 10%;
+  width: 75%;
+  height: auto;
+  margin: 2%;
+  padding: 1%;
+  background-color: rgba(75, 132, 158, 0.301);
+  text-align: left;
+  border-radius: 25px;
+}
+.title, .body-text, .dropDown{
+  background-color: white;
+  margin: 0;
+  margin-bottom: 2%;
+  resize: none;
+  border-radius: 25px;
+  height: 30px;
+  font-size: 25px;
+}
+
+.body-text{
+  resize: vertical;
+  height: 100px;
+  min-height: 100px;
+  font-size: 18px;
+}
+
+.dropDown{
+  height: auto;
+}
+
+.postButton{
+  color: white;
+  background-color: rgba(75, 132, 158, 0.301);
+  border-radius: 25px;
+  border: none;
+  font-size: 30px;
+  width: auto;
+  padding: 2%;
+}
+.postButton:active{
+  transform: scale(1)
+}
+.postButton:disabled{
+  opacity: 0.5;
+  background-color: #cc0033;
 }

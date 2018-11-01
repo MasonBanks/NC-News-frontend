@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import * as api from '../api.js'
 import Display from './Display';
 import Article from './Article';
@@ -20,14 +20,13 @@ class Homepage extends Component {
     if (!this.state.topics) return <Loading />
     const { err } = this.state;
     if (err) {
-      console.log(err)
-      // return <Redirect to={{
-      //   pathname: "/error",
-      //   state: {
-      //     code: err.response.status,
-      //     message: err.response.data.msg
-      //   }
-      // }} />
+      return <Redirect to={{
+        pathname: "/error",
+        state: {
+          code: err.response.status,
+          message: err.response.data.msg
+        }
+      }} />
     }
     return (
       <BrowserRouter>
