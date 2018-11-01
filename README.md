@@ -38,7 +38,7 @@ React should then take you to a localhost of the site which you are free to expl
 ### However,
 If you wish to check out the pages directly, the api is hosted on:
 
- https://mason-nc-news.herokuapp.com/api
+https://mason-nc-news.herokuapp.com/api/articles
 
 site can be viewed on: 
 
