@@ -41,7 +41,7 @@ class Homepage extends Component {
               <Route exact path='/error' render={(props) => <ErrorRedirect {...props} />} />
             </Switch>
           </div>
-          <footer>
+          <footer className="footer">
             <p>© 2018 - Site designed & developed by Mason Banks</p>
             This is a student project demo created whilst studying the Full Stack Developer Course at
             <a href="https://northcoders.com">{` Northcoders`}</a>

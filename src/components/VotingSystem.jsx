@@ -11,21 +11,23 @@ class VotingSystem extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="voter">
         <button
           onClick={() => this.changeVoteMod('up')}
-          disabled={this.state.value === 'up'} >
+          disabled={this.state.value === 'up'}
+          className="voteBtn">
           <img
             src={upvote}
             alt="upvote"
             className={this.state.value === 'up' ? "vote-inactive" : "vote"} />
         </button>
-        <p>
+        <p className="number-display">
           {this.props.votes + this.state.voteModifier}
         </p>
         <button
           onClick={() => this.changeVoteMod('down')}
-          disabled={this.state.value === 'down'}>
+          disabled={this.state.value === 'down'}
+          className="voteBtn">
           <img
             src={downvote}
             alt="downvote"

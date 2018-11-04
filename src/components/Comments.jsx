@@ -47,9 +47,11 @@ class Comments extends Component {
                   type="comments"
                   votes={comment.votes} />
                 <div>
-                  <div>{`${comment.created_by.username}: ${moment(comment.created_at).startOf("second").fromNow()}`}</div>
+                  <div className="postBy">{`${comment.created_by.username}: ${moment(comment.created_at).startOf("second").fromNow()}`}</div>
                 </div>
-                <div>{`"${comment.body}"`}</div>
+                <div>
+                  <div>{`"${comment.body}"`}</div>
+                </div>
                 <button
                   type="submit"
                   id="delete"

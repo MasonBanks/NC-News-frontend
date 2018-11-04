@@ -1,10 +1,13 @@
-# Northcoders News
+# Northcoders News - Frontend
 
 ## The Breakdown
 
 `Northcoders News` is a site intended to demonstrate the skills acquired whilst studying the Full Stack Developer Course at Northcoders. 
 
 This application implements a cultivated understanding of `Javascript` and the utilisation of Agile software development practices such as Test-Driven Development.
+
+The backend repo is located here:
+https://github.com/MasonBanks/NC-News-backend
 
 ## The Dependencies Involved
 

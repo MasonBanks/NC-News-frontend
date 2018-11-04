@@ -21,7 +21,9 @@ class Banner extends Component {
             </div>
           </Link>
           <Linkbar />
-          <div id="newsToday">{`TODAYS `}<div className="n">{`N`}</div>EWS:</div>
+          <div className="newsToday-container">
+            <div id="newsToday">{`TODAYS `}<div className="n">{`N`}</div>EWS:</div>
+          </div>
         </div>
       </div>
     );

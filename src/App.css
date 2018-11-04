@@ -1,6 +1,6 @@
 * {
   margin: 0px;
-  padding: 0px;
+  padding: 2px;
   text-decoration: none;
 }
 
@@ -130,6 +130,15 @@ footer{
   margin: 1%;
   transition: 200ms;
 }
+.voter{
+  text-align: center;
+  float: left;
+  margin: 2px;
+}
+.voteBtn{
+  border: none;
+  background-color: transparent;
+}
 .vote, .vote-inactive{
   height: 10px;
 }
@@ -219,9 +228,14 @@ form{
   background-color: rgba(75, 132, 158, 0.301);
   text-align: left;
   border-radius: 25px;
+  display: flex;
+justify-content: space-between;
 }
 .commentCardOdd{
  background-color: rgba(158, 75, 75, 0.301);
+}
+.postBy{
+  margin: 5px;
 }
 .loadingScreen{
   display: flex;
@@ -314,4 +328,10 @@ button{
 .postButton:disabled{
   opacity: 0.5;
   background-color: #cc0033;
+}
+.number-display{
+  margin: 5px;
+}
+.footer{
+  margin-top: 15%;
 }
